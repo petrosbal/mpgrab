@@ -17,12 +17,12 @@ jobs:
         include:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
-            artifact_name: mpfree
-            asset_name: mpfree-linux
+            artifact_name: mpgrab
+            asset_name: mpgrab-linux
           - os: windows-latest
             target: x86_64-pc-windows-msvc
-            artifact_name: mpfree.exe
-            asset_name: mpfree-windows.exe
+            artifact_name: mpgrab.exe
+            asset_name: mpgrab-windows.exe
 
     steps:
     - name: Checkout code

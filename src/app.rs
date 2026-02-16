@@ -1,4 +1,4 @@
-// MpFree: Lightweight youtube-to-mp3 converter built with Rust and egui
+// MpGrab: Lightweight youtube-to-mp3 converter built with Rust and egui
 // Copyright (C) 2026  Petros Baloglou
 
 use std::path::PathBuf;
@@ -6,7 +6,7 @@ use std::process::Command;
 use std::sync::mpsc;
 use crate::paths::AppPaths;
 
-pub struct MpFreeApp {
+pub struct MpGrabApp {
     pub url: String,
     pub paths: AppPaths,
     pub status: String,
@@ -15,7 +15,7 @@ pub struct MpFreeApp {
     pub download_path: Option<PathBuf>,
 }
 
-impl MpFreeApp {
+impl MpGrabApp {
     pub fn new(_cc: &eframe::CreationContext<'_>) -> Self {
         egui_extras::install_image_loaders(&_cc.egui_ctx);
         let (tx, rx) = mpsc::channel();

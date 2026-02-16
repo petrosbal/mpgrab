@@ -1,4 +1,4 @@
-APP_NAME=mpfree
+APP_NAME=mpgrab
 
 all: run
 

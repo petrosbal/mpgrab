@@ -1,10 +1,10 @@
-// MpFree: Lightweight youtube-to-mp3 converter built with Rust and egui
+// MpGrab: Lightweight youtube-to-mp3 converter built with Rust and egui
 // Copyright (C) 2026  Petros Baloglou
 
 use eframe::egui;
-use crate::app::MpFreeApp;
+use crate::app::MpGrabApp;
 
-impl eframe::App for MpFreeApp {
+impl eframe::App for MpGrabApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         ctx.set_cursor_icon(egui::CursorIcon::Default);
         
@@ -17,7 +17,7 @@ impl eframe::App for MpFreeApp {
             ui.with_layout(egui::Layout::top_down(egui::Align::Center), |ui| {
                 ui.add_space(15.0);
                 ui.add(
-                    egui::Image::new(egui::include_image!("../assets/mpfree_logo.png"))
+                    egui::Image::new(egui::include_image!("../assets/mpgrab_logo.png"))
                         .max_width(200.0)
                 );
                 ui.add_space(15.0);

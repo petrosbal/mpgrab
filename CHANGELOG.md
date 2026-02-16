@@ -20,7 +20,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - GNU General Public License v3.0.
 - Custom output folder selection using native dialogs.
 - Source code split into multiple files for modularity.
-- mpFree logo inside the application.
+- MpGrab logo inside the application.
 - Icon for the application window and executable.
 - Makefile Windows target for easier building on Windows systems.
 

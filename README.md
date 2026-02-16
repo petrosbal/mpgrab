@@ -1,6 +1,6 @@
-![MpFree Logo](assets/mpfree_logo.png)
+![MpGrab Logo](assets/mpgrab_logo.png)
 
-**MpFree** is a minimalist YouTube-to-MP3 downloader built with **Rust** and the **egui** framework. 
+**MpGrab** is a minimalist YouTube-to-MP3 downloader built with **Rust** and the **egui** framework. 
 
 ## Features
 * **Native Performance:** Built for speed, memory safety and minimal overhead compared to interpreted alternatives.
@@ -18,10 +18,10 @@
 
 ## Installation Guide
 
-MpFree is a portable, single-binary application. This means you don't need to install any external dependencies like Python, `yt-dlp`, or `FFmpeg`. Everything is packed inside the executable.
+MpGrab is a portable, single-binary application. This means you don't need to install any external dependencies like Python, `yt-dlp`, or `FFmpeg`. Everything is packed inside the executable.
 
 ### Windows
-1. Download `mpfree.exe` from the **Releases** page.
+1. Download `mpgrab.exe` from the **Releases** page.
 2. Move it to a folder of your choice (e.g., Desktop or Downloads).
 3. Double-click to run.
 
@@ -31,16 +31,16 @@ MpFree is a portable, single-binary application. This means you don't need to in
 
 ### Linux
 
-1. Download `mpfree` from the **Releases** page.
+1. Download `mpgrab` from the **Releases** page.
 2. Open your terminal and navigate to the download folder.
 3. Give it execution permissions:
 
 ```bash
-chmod +x mpfree
+chmod +x mpgrab
 ```
 
 4. Run it:
 
 ```bash
-./mpfree
+./mpgrab
 ```

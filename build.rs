@@ -4,6 +4,6 @@ fn main() {
             std::env::set_var("WINDRES", "x86_64-w64-mingw32-windres");
         }
         
-        embed_resource::compile("mpfree.rc", embed_resource::NONE);
+        embed_resource::compile("mpgrab.rc", embed_resource::NONE);
     }
 }
