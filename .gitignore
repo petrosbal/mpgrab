@@ -1,13 +1,37 @@
-/target
-**/*.rs.bk
+CLAUDE.md
 
-.vscode/
-.idea/
-*.swp
-*.swo
+# Dependencies
+node_modules
 
-*.mp3
+# Build output
+dist
+dist-ssr
+src-tauri/target
 
+# Environment variables
+.env
+.env.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.local
+
+# OS files
 .DS_Store
 Thumbs.db
-*:Zone.Identifier
