@@ -19,13 +19,7 @@ type ProgressPayload = {
 };
 
 // a union type for the download lifecycle
-type DownloadStatus =
-  | "idle"
-  | "downloading"
-  | "converting"
-  | "done"
-  | "error"
-  | "cancelled";
+type DownloadStatus = "idle" | "downloading" | "converting" | "done" | "error" | "cancelled";
 
 function App() {
   //these are current value / setter pairs
@@ -46,27 +40,24 @@ function App() {
     // listen() to the "download://progress" channel
     // every time Rust calls app.emit("download://progress", ...) the callback here fires
     // it returns a Promise that resolves to an unsubscribe function
-    const unlistenPromise = listen<ProgressPayload>(
-      "download://progress",
-      (event) => {
-        const p = event.payload;
+    const unlistenPromise = listen<ProgressPayload>("download://progress", (event) => {
+      const p = event.payload;
 
-        if (p.event === "downloading" && p.percent !== undefined) {
-          setStatus("downloading");
-          setPercent(p.percent);
-        } else if (p.event === "converting") {
-          setStatus("converting");
-        } else if (p.event === "done") {
-          setStatus("done");
-          setPercent(100);
-        } else if (p.event === "error") {
-          setStatus("error");
-          setMessage(p.message ?? "an unknown error occurred");
-        } else if (p.event === "cancelled") {
-          setStatus("cancelled");
-        }
+      if (p.event === "downloading" && p.percent !== undefined) {
+        setStatus("downloading");
+        setPercent(p.percent);
+      } else if (p.event === "converting") {
+        setStatus("converting");
+      } else if (p.event === "done") {
+        setStatus("done");
+        setPercent(100);
+      } else if (p.event === "error") {
+        setStatus("error");
+        setMessage(p.message ?? "an unknown error occurred");
+      } else if (p.event === "cancelled") {
+        setStatus("cancelled");
       }
-    );
+    });
 
     // so it doesn't leak after the window closes
     return () => {
@@ -104,20 +95,14 @@ function App() {
   const isActive = status === "downloading" || status === "converting";
 
   return (
-
-
     <main className="min-h-screen bg-background flex items-center justify-center p-8">
       <div className="w-full max-w-md flex flex-col gap-6">
-
         <div>
           <h1 className="text-2xl font-bold tracking-tight">MpGrab</h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Download YouTube videos as MP3
-          </p>
+          <p className="text-sm text-muted-foreground mt-1">Download YouTube videos as MP3</p>
         </div>
 
         <div className="flex flex-col gap-4">
-
           <div className="flex flex-col gap-1.5">
             {/* htmlFor links this label to the input. clicking the label focuses the field */}
             <label htmlFor="url-input" className="text-sm font-medium">
@@ -128,7 +113,6 @@ function App() {
               type="text"
               placeholder="https://www.youtube.com/watch?v=..."
               value={url}
-
               onChange={(e) => setUrl(e.target.value)}
               disabled={isActive}
               className="h-9 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
@@ -149,7 +133,6 @@ function App() {
               className="h-9 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
             />
           </div>
-
         </div>
 
         <div className="flex gap-3">
@@ -159,11 +142,7 @@ function App() {
             disabled={isActive || url.trim() === "" || outputDir.trim() === ""}
             className="flex-1"
           >
-            {isActive
-              ? status === "converting"
-                ? "Converting..."
-                : "Downloading..."
-              : "Download"}
+            {isActive ? (status === "converting" ? "Converting..." : "Downloading...") : "Download"}
           </Button>
 
           {/* cancel button only appears while a download is active.
@@ -200,13 +179,10 @@ function App() {
             Done! File saved to {outputDir}
           </p>
         )}
-        {status === "error" && (
-          <p className="text-sm text-destructive">{message}</p>
-        )}
+        {status === "error" && <p className="text-sm text-destructive">{message}</p>}
         {status === "cancelled" && (
           <p className="text-sm text-muted-foreground">Download cancelled.</p>
         )}
-
       </div>
     </main>
   );
