@@ -1,6 +1,6 @@
 [package]
 name = "mpgrab"
-version = "0.1.0"
+version = "0.2.0"
 description = "Minimalist YouTube-to-MP3 downloader"
 authors = ["Petros Baloglou"]
 edition = "2021"
